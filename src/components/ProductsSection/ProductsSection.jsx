@@ -7,8 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import cat from "../../assets/cat.jpeg";
-
 import { IoHeartOutline, IoCart } from "react-icons/io5";
 
 import product1 from "../../assets/product_1.png";
@@ -18,13 +16,12 @@ import product4 from "../../assets/product_4.png";
 import product5 from "../../assets/product_5.png";
 import product6 from "../../assets/product_6.png";
 
-
 const ProductsSection = () => {
   const products = [
     {
       id: 1,
       image: product1,
-      title: "Item 1",
+      title: "ITEM ONE",
       price: 1000,
     },
     {
@@ -61,6 +58,7 @@ const ProductsSection = () => {
 
   return (
     <section className="products-section">
+        <h3 className="title">SHOP</h3>
       <Swiper
         pagination={true}
         navigation={true}
@@ -70,18 +68,18 @@ const ProductsSection = () => {
         modules={[Navigation]}
         className="swiper"
         breakpoints={{
-            0: {
-                slidesPerView: 1,
-            },
-            500: {
-                slidesPerView: 2,
-            },
-            768: {
-                slidesPerView: 3,
-            },
-            1024: {
-                slidesPerView: 4,
-            },
+          0: {
+            slidesPerView: 1,
+          },
+          500: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
         }}
         autoplay={{
           delay: 5000,
