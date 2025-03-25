@@ -1,0 +1,119 @@
+.products-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .swiper {
+    height: auto;
+    width: 1600px;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #9c9c9c, $alpha: 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+
+    .inner-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 450px;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(0.95);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+
+      .wishlist-heart {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 40px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: red;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      bottom: 30px;
+      padding: 10px;
+
+      .top {
+        width: 100%;
+        text-align: center;
+
+        h3 {
+          font-size: 30px;
+          font-weight: 600;
+        }
+      }
+
+      .bottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+        p {
+          font-size: 25px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #212254;
+            color: #fff;
+            font-size: 26px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+    
+            &:hover {
+                background-color: #fff;
+                color: #212254;
+            }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .swiper {
+      width: 90%;
+    }
+    
+  }
+}
