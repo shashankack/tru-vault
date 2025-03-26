@@ -1,7 +1,7 @@
 .navbar {
-  background-color: #fff;
+  background-color: #ffffff;
   height: 100px;
-  color: #000;
+  color: #212254;
   padding: 10px 0;
   position: fixed;
   width: 100%;
@@ -10,6 +10,25 @@
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease;
+
+  svg {
+    color: #212254;
+  }
+
+  &.scrolled {
+    background-color: #212254;
+    color: #ffffff;
+
+    svg {
+      color: #ffffff;
+    }
+
+    .left ul li,
+    .right ul li {
+      color: #ffffff;
+    }
+  }
 
   .left {
     display: flex;
@@ -28,7 +47,6 @@
         transition: all 0.3s ease;
 
         &:hover {
-          color: #212254;
           transform: scale(1.1);
         }
       }
@@ -64,7 +82,6 @@
         transition: all 0.3s ease;
 
         &:hover {
-          color: #212254;
           transform: scale(1.1);
         }
       }
@@ -141,6 +158,7 @@
 
     .left ul li {
       margin: 0 10px;
+      color: #fff;
     }
 
     .right {

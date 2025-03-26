@@ -12,7 +12,7 @@ import { IoHeartOutline, IoCart } from "react-icons/io5";
 const ProductsSection = ({ products }) => {
   return (
     <section className="products-section">
-      <h3 className="title">SHOP</h3>
+      <h3 className="title-desktop">OUR PRODUCTS</h3>
       <Swiper
         pagination={true}
         navigation={true}

@@ -1,5 +1,7 @@
 import "./Navbar.scss";
-import logo from "../../assets/logo.png";
+import whiteLogo from "../../assets/white_logo.png";
+import blueLogo from "../../assets/blu_logo.png";
+import { useEffect } from "react";
 
 import {
   IoMenu,
@@ -13,10 +15,21 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 700); // You can tweak the scroll threshold
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="left">
           <ul>
             <li onClick={() => setMenuOpen(!menuOpen)}>
@@ -28,7 +41,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="center">
-          <img src={logo} alt="Logo" />
+          <img src={scrolled ? whiteLogo : blueLogo} alt="Logo" />
         </div>
         <div className="right hide-on-mobile">
           <ul>
@@ -48,14 +61,22 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="mobile-menu__header">
-          <img src={logo} alt="Logo" />
+        <img src={scrolled ? whiteLogo : blueLogo} alt="Logo" />
           <IoClose className="close-icon" onClick={() => setMenuOpen(false)} />
         </div>
         <ul>
-          <li><IoSearch /> Search</li>
-          <li><IoPersonOutline /> Account</li>
-          <li><IoHeartOutline /> Wishlist</li>
-          <li><IoCartOutline /> Cart</li>
+          <li>
+            <IoSearch /> Search
+          </li>
+          <li>
+            <IoPersonOutline /> Account
+          </li>
+          <li>
+            <IoHeartOutline /> Wishlist
+          </li>
+          <li>
+            <IoCartOutline /> Cart
+          </li>
         </ul>
       </div>
     </>

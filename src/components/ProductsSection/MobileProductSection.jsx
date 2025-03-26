@@ -52,7 +52,7 @@ const MobileProductSection = ({ products }) => {
 
   return (
     <section className="products-section">
-      <h3 className="title">SHOP</h3>
+      <h3 className="title">OUR PRODUCTS</h3>
       <Swiper
         effect="coverflow"
         grabCursor={true}
